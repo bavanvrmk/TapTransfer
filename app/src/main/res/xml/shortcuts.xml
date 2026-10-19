@@ -1,0 +1,8 @@
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+    <shortcut android:shortcutId="pay" android:shortcutShortLabel="@string/shortcut_pay" android:icon="@mipmap/ic_launcher">
+        <intent android:action="com.taptransfer.PAY" android:targetPackage="com.taptransfer" android:targetClass="com.taptransfer.MainActivity"/>
+    </shortcut>
+    <shortcut android:shortcutId="receive" android:shortcutShortLabel="@string/shortcut_receive" android:icon="@mipmap/ic_launcher">
+        <intent android:action="com.taptransfer.RECEIVE" android:targetPackage="com.taptransfer" android:targetClass="com.taptransfer.MainActivity"/>
+    </shortcut>
+</shortcuts>

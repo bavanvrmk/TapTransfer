@@ -1,0 +1,5 @@
+<resources>
+    <color name="icon_background">#15251C</color>
+    <string name="shortcut_pay">Pay</string>
+    <string name="shortcut_receive">Request money</string>
+</resources>

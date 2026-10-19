@@ -1,0 +1,22 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+ <uses-permission android:name="android.permission.INTERNET"/>
+ <uses-permission android:name="android.permission.NFC"/>
+ <uses-feature android:name="android.hardware.nfc" android:required="true"/>
+ <uses-feature android:name="android.hardware.nfc.hce" android:required="true"/>
+ <queries><intent><action android:name="android.intent.action.VIEW"/><data android:scheme="upi"/></intent></queries>
+ <application android:icon="@mipmap/ic_launcher" android:label="TapTransfer" android:allowBackup="false" android:dataExtractionRules="@xml/extraction_rules" android:theme="@android:style/Theme.Material.Light.NoActionBar">
+  <activity android:name=".MainActivity" android:exported="true">
+   <meta-data android:name="android.app.shortcuts" android:resource="@xml/shortcuts"/>
+   <intent-filter><action android:name="android.intent.action.MAIN"/><category android:name="android.intent.category.LAUNCHER"/></intent-filter>
+  </activity>
+  <provider android:name="androidx.core.content.FileProvider" android:authorities="${applicationId}.files" android:exported="false" android:grantUriPermissions="true">
+   <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/share_paths"/>
+  </provider>
+  <service android:name=".HelloService" android:exported="true" android:permission="android.permission.BIND_NFC_SERVICE">
+   <intent-filter><action android:name="android.nfc.cardemulation.action.HOST_APDU_SERVICE"/></intent-filter>
+   <meta-data android:name="android.nfc.cardemulation.host_apdu_service" android:resource="@xml/apduservice"/>
+  </service>
+ </application>
+</manifest>
+
+
